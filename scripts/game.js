@@ -16,6 +16,10 @@ function switchPlayer() {
 }
 
 function selectGameField(event) {
+  if (event.target.tagName !== "LI") {
+    return;
+  }
+
   event.target.textContent = players[activePlayer].symbol;
   event.target.classList.add("disabled");
   switchPlayer();
